@@ -1,0 +1,37 @@
+[project]
+name = "generals-bots"
+version = "2.6.0"
+description = "Fast JAX generals.io engine — RL environment and the Generals Competition ruleset"
+authors = [{name = "Matej Straka", email = "strakammm@gmail.com"}]
+license = {text = "MIT"}
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = [
+    "numpy>=2.0.0",
+    "pygame>=2.6.0",
+    "python-socketio[client]>=5.11.4",
+    "jax>=0.4.30",
+    "jaxlib>=0.4.30",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=8.0.0",
+]
+
+[project.urls]
+Homepage = "https://generals.bot"
+Repository = "https://github.com/strakam/generals-bots"
+
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools.packages.find]
+include = ["generals*"]
+
+[tool.ruff]
+line-length = 120
+lint.select = ["E", "F", "I", "BLE", "UP", "FA"]
+target-version = "py311"
+exclude = ["tests", "examples"]
